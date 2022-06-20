@@ -5,7 +5,7 @@ Go to this file
 
 Layout > theme.liquid
 
-Add this code in </head> tag above
+Add this code in &lt;/head> tag above
 
 {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
 
@@ -16,7 +16,7 @@ Add this code in </head> tag above
 {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
 
 
-add this code in </body> tag above
+add this code in &lt;/body> tag above
 
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
