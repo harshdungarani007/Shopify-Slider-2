@@ -1,0 +1,30 @@
+.container_full{max-width:100%;width:100%;margin:0 auto; padding: 0 30px;}
+.jushar_slider_2 .js2_left_img{height: 100vh;overflow: hidden;}
+.jushar_slider_2 .js2_left_img img{width:100%;height: auto;}
+.js2_left .slick-prev.slick-arrow, 
+.js2_left .slick-next.slick-arrow, 
+.js2_right .slick-prev.slick-arrow, 
+.js2_right .slick-next.slick-arrow{display:none !important;}
+.js2_left .js2_left_img img{transform: scale(3);}
+.js2_left .slick-list .slick-track .js2_left_img img{transition: all 5s ease-in;}
+.js2_left .slick-list .slick-track .js2_left_img.slick-active img{transition: all 5s ease-in;transform: scale(1);}
+.js2_center{padding: 15px;text-align: right;}
+.js2_center .select_c_desc .h1{font-size:60px;text-transform: uppercase;font-weight: 600;}
+.js2_center .select_c_desc .h1 a{color:#000000;text-decoration: none;}
+.js2_center .select_c_desc .h2{margin-top:50px;}
+.jushar_slider_2_1{position:relative}
+.jushar_slider_2_1 .prev-arrow{position:absolute;bottom: -50px;right: 150px;background: transparent;border: none;font-size: 26px;z-index:2;}
+.jushar_slider_2_1 .next-arrow{position:absolute;bottom: -50px;right: 0px;background: transparent;border: none;font-size: 26px;z-index:2;}
+.jushar_slider_2_1 button.slide-arrow.next-arrow.slick-arrow:before {content: '';position: absolute;left: 60px;width: 500px;height: 1px;background: #000;z-index: 999;bottom: 17px;}
+.jushar_slider_2_1 button.slide-arrow.next-arrow.slick-arrow:after{content: '';position: absolute;left: 60px;width: 0px;height: 1px;background: #fff;z-index: 999;bottom: 17px;transition: all 5s ease-in;}
+.jushar_slider_2_1 button.slide-arrow.next-arrow.slick-arrow.j21_before:after{width: 500px;}
+.jushar_slider_2_dev h1{z-index: 1;bottom: 0;font-size: 250px;text-transform: uppercase;font-weight: 600;margin: 0 auto;text-align: center;display: block;left: 15%;opacity: 0.1;}
+.js2_right_title{transform: rotate(90deg);}
+@media only screen and (max-width: 1440px) {
+    .jushar_slider_2_dev h1{font-size: 175px;}
+    .js2_center .select_c_desc .h1{font-size:36px;}
+    .jushar_slider_2_1 .next-arrow, .jushar_slider_2_1 .prev-arrow{bottom:-40px;}
+    .js2_left .slick-list .slick-track .js2_left_img.slick-active img{transform: scale(2);}
+    .js2_right_title{font-size:2rem;}
+    .jushar_slider_2 .js2_left_img img{height:100vh;}
+}

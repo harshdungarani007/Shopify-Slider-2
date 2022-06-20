@@ -1,0 +1,177 @@
+{{ 'slick.css' | asset_url | stylesheet_tag }}
+    {{ 'jushar-slider-1.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
+
+    <div class="container_full jushar_slider_2_dev position-relative">
+        <h1 class="h1 position-absolute">{{ section.settings.brand_title }}</h1>
+        <div class="d-flex align-items-center">
+          <div class="col-sm-1">
+            <div class="jushar_slider_2 js2_left">
+              {% for block in section.blocks %}
+              <div class="js2_left_img">
+                {% if block.settings.left_image != null %}
+                  <img srcset="
+                     {% if block.settings.left_image.width >= 493 %}{{ block.settings.left_image | image_url: width: 493 }} 493w,{% endif %}
+                     {% if block.settings.left_image.width >= 600 %}{{ block.settings.left_image | image_url: width: 600 }} 600w,{% endif %}
+                     {% if block.settings.left_image.width >= 713 %}{{ block.settings.left_image | image_url: width: 713 }} 713w,{% endif %}
+                     {% if block.settings.left_image.width >= 823 %}{{ block.settings.left_image | image_url: width: 823 }} 823w,{% endif %}
+                     {% if block.settings.left_image.width >= 990 %}{{ block.settings.left_image | image_url: width: 990 }} 990w,{% endif %}
+                     {% if block.settings.left_image.width >= 1100 %}{{ block.settings.left_image | image_url: width: 1100 }} 1100w,{% endif %}
+                     {% if block.settings.left_image.width >= 1206 %}{{ block.settings.left_image | image_url: width: 1206 }} 1206w,{% endif %}
+                     {% if block.settings.left_image.width >= 1346 %}{{ block.settings.left_image | image_url: width: 1346 }} 1346w,{% endif %}
+                     {% if block.settings.left_image.width >= 1426 %}{{ block.settings.left_image | image_url: width: 1426 }} 1426w,{% endif %}
+                     {% if block.settings.left_image.width >= 1646 %}{{ block.settings.left_image | image_url: width: 1646 }} 1646w,{% endif %}
+                     {% if block.settings.left_image.width >= 1946 %}{{ block.settings.left_image | image_url: width: 1946 }} 1946w,{% endif %}
+                     {{ block.settings.left_image | image_url }} {{ block.settings.left_image.width }}w"
+                     src="{{ block.settings.left_image | image_url: width: 1946 }}"
+                     width="973"
+                     height="{{ 973 | divided_by: block.settings.left_image.aspect_ratio | ceil }}"
+                     alt="{{ block.settings.left_image.alt | escape }}"
+                     >
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="jushar_slider_2_1 js2_center">
+              {% for block in section.blocks %}
+              <div class="select_c_desc">
+                {% if block.settings.collection != blank %}
+                  <div class="h1"><a href="{{ block.settings.collection.url }}">{{ block.settings.collection.title }}</a></div>
+                {% endif %}
+                {% if block.settings.collection != blank %}
+                    <div class="h2">{{ block.settings.custom_liquid }}</div>
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="jushar_slider_2 js2_right">
+              {% for block in section.blocks %}
+              <div class="js2_left_img">
+              {% assign media = block.settings.right_image %}
+                {% if block.settings.right_image != null %}
+                  <img srcset="
+                     {% if block.settings.right_image.width >= 493 %}{{ block.settings.right_image | image_url: width: 493 }} 493w,{% endif %}
+                     {% if block.settings.right_image.width >= 600 %}{{ block.settings.right_image | image_url: width: 600 }} 600w,{% endif %}
+                     {% if block.settings.right_image.width >= 713 %}{{ block.settings.right_image | image_url: width: 713 }} 713w,{% endif %}
+                     {% if block.settings.right_image.width >= 823 %}{{ block.settings.right_image | image_url: width: 823 }} 823w,{% endif %}
+                     {% if block.settings.right_image.width >= 990 %}{{ block.settings.right_image | image_url: width: 990 }} 990w,{% endif %}
+                     {% if block.settings.right_image.width >= 1100 %}{{ block.settings.right_image | image_url: width: 1100 }} 1100w,{% endif %}
+                     {% if block.settings.right_image.width >= 1206 %}{{ block.settings.right_image | image_url: width: 1206 }} 1206w,{% endif %}
+                     {% if block.settings.right_image.width >= 1346 %}{{ block.settings.right_image | image_url: width: 1346 }} 1346w,{% endif %}
+                     {% if block.settings.right_image.width >= 1426 %}{{ block.settings.right_image | image_url: width: 1426 }} 1426w,{% endif %}
+                     {% if block.settings.right_image.width >= 1646 %}{{ block.settings.right_image | image_url: width: 1646 }} 1646w,{% endif %}
+                     {% if block.settings.right_image.width >= 1946 %}{{ block.settings.right_image | image_url: width: 1946 }} 1946w,{% endif %}
+                     {{ block.settings.right_image | image_url }} {{ block.settings.right_image.width }}w"
+                     src="{{ block.settings.right_image | image_url: width: 1946 }}"
+                     width="973"
+                     height="{{ 973 | divided_by: block.settings.right_image.aspect_ratio | ceil }}"
+                     alt="{{ block.settings.right_image.alt | escape }}"
+                     >
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="h1 js2_right_title">{{ section.settings.jushar_slider_title }}</div>
+          </div>
+        </div>
+      </div>
+      <script>
+      $( document ).ready(function() {
+        $('.jushar_slider_2').slick({
+          dots: false,
+          swipe: false,
+        });
+        $('.jushar_slider_2_1').slick({
+          dots: false,
+          swipe: false,
+          prevArrow: '<button class="slide-arrow prev-arrow">Prev</button>',
+          nextArrow: '<button class="slide-arrow next-arrow">Next</button>'
+        });
+      });
+        $(document).on('click', '.jushar_slider_2_1 .prev-arrow', function() {
+          $(".jushar_slider_2 .slick-prev").click();
+        });
+        $(document).on('click', '.jushar_slider_2_1 .next-arrow', function() {
+          $(".jushar_slider_2 .slick-next").click();
+        });
+        
+        $( document ).ready(function() {
+          $(".jushar_slider_2_1 .next-arrow").click(function(){
+            $(".jushar_slider_2_1 .next-arrow").toggleClass("j21_before");
+          });
+        });
+        
+      </script>
+      {% schema %}
+        {
+          "name": "Jushar Slider 2",
+          "tag": "section",
+          "class": "section",
+          "max_blocks": 3,
+          "settings": [
+              {
+                  "type": "text",
+                  "id": "jushar_slider_title",
+                  "default": "2022 Spring/Summer",
+                  "label": "Add Jushar Slider Title"
+              },
+              {
+                  "type": "text",
+                  "id": "brand_title",
+                  "default": "Shopify Dev",
+                  "label": "Background Title"
+              }
+          ],
+          "blocks": [
+              {
+                "type": "column",
+                "name": "Jushar Slider 2",
+                "settings": [
+                  {
+                    "type": "image_picker",
+                    "id": "left_image",
+                    "label": "Left Side Image"
+                  },
+                  {
+                    "type": "image_picker",
+                    "id": "right_image",
+                    "label": "Left Side Image"
+                  },
+                  {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Select Collection"
+                  },
+                  {
+                    "type": "liquid",
+                    "id": "custom_liquid",
+                    "label": "Add Description",
+                    "info": "t:sections.custom-liquid.settings.custom_liquid.info"
+                  }
+                ]
+              }
+          ],
+          "presets": [
+            {
+              "name": "Jushar Slider 2",
+              "blocks": [
+                {
+                  "type": "column"
+                }
+              ]
+            }
+          ]	
+        }
+      {% endschema %}
+      
+      {% stylesheet %}
+      {% endstylesheet %}
+      
+      {% javascript %}
+      {% endjavascript %}
